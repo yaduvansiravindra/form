@@ -1,0 +1,94 @@
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5a5656;
+  overflow: hidden;
+color: rgb(26, 189, 37);
+background-image :url(diwali-background-1u1kl9ourcuqfkhn.png);
+background-size: cover;
+
+  /* transform: scale(1.5); */
+}
+div input{margin-top: 20px;}
+
+.form{
+display: flex;
+align-items: stretch;
+border: 3px solid rgb rgb(252, 60, 22);
+height: 410px;
+width: 350px;
+border:3px solid gray;
+background-color: #000;
+border-radius: 20px;
+text-align: center;
+margin-top: 10px;} 
+label{display: inline-block;
+width: 100px;}
+.message{margin-bottom: 20px;}
+
+
+/* button */
+.button {
+  margin: 40px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.button::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:active:after {
+  background: transparent;
+}
+
+.button:active {
+  color: #000;
+  font-weight: bold;
+}
